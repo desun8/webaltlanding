@@ -1,0 +1,82 @@
+/* All typography styles */
+
+@import url('https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i');
+
+/* TITLES */
+@custom-selector :--all-title h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6;
+
+:--all-title {
+  margin: 0;
+}
+
+h1 {
+  margin-bottom: 40px;
+  /* font-family: var(--mainFont); */
+  color: var(--black);
+  font-size: 46px;
+  line-height: 50px;
+  font-weight: 600;
+}
+
+h2 {
+  margin-bottom: 82px;
+  color: var(--black);
+  font-size: 32px;
+  line-height: 38px;
+  font-weight: 500;
+}
+
+h3 {
+  margin-bottom: 18px;
+  color: var(--black);
+  font-size: 26px;
+  line-height: 30px;
+  font-weight: 600;
+}
+
+h4 {
+  margin-bottom: 18px;
+  color: var(--black);
+  font-size: 22px;
+  line-height: 26px;
+  font-weight: 600;
+}
+
+h5 {
+  margin-bottom: 4px;
+  color: var(--black);
+  font-size: 10px;
+  line-height: 10px;
+  font-weight: 700;
+}
+
+.h1-small {
+  font-size: 36px;
+  font-style: normal;
+}
+
+.h2-large {
+  font-size: 42px;
+  line-height: 48px;
+}
+
+/* PARAGRAPHS and other TEXT */
+@custom-selector :--paragraph p, .p;
+
+:--paragraph {
+  margin: 0; /* reset default margin */
+  font-size: 22px;
+  line-height: 26px;
+}
+
+/* span,
+.span {
+  font-family: var(--secFont);
+  font-size: 14px;
+  line-height: 18px;
+
+  @media (--md) {
+    font-size: 18px;
+    line-height: 24px;
+  }
+} */

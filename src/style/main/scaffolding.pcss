@@ -1,0 +1,47 @@
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--mainFont);
+  font-size: 100%;
+  color: #000;
+}
+
+.wrap {
+  @apply --wrap;
+}
+
+.c-white {
+  color: #fff;
+}
+
+/* Специальные классы */
+
+/* .onlyXs {
+  @media (--sm) {
+    display: none;
+  }
+} */
+
+/* .noScroll {
+  height: 100%;
+  overflow: hidden;
+} */
+
+/* .jsHide {
+  display: none;
+}
+
+.hideMobile {
+  @media (--mobile) {
+    display: none;
+  }
+}
+*/

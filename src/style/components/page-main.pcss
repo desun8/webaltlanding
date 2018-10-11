@@ -1,0 +1,38 @@
+.page-main {
+  width: 100%;
+  overflow: hidden;
+}
+
+.grid {
+  @apply --grid;
+
+  position: relative;
+  margin-bottom: 20px;
+
+  @media (--sm) {
+    margin-bottom: 30px;
+  }
+
+  &_item {
+    font-size: 0;
+    cursor: pointer;
+
+    &--large {
+      grid-column: 1/5;
+      cursor: default;
+
+      @media (--sm) {
+        grid-column: 1/6;
+      }
+
+      @media (--md) {
+        grid-column: 1/5;
+      }
+
+      & img {
+        width: 100%;
+      }
+    }
+  }
+}
+

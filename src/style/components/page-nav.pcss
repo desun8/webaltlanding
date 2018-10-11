@@ -1,0 +1,18 @@
+.page-nav {
+  width: 590px;
+  padding: 16px 0;
+  color: #fff;
+  font-size: 16px;
+  line-height: 20px;
+
+  &_list {
+    @apply --list-unstyled;
+    @apply --flex-container;
+
+    justify-content: space-between;
+
+    & a {
+      @apply --link-underline;
+    }
+  }
+}

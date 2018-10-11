@@ -1,0 +1,70 @@
+:root {
+  --grid: {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(73px, 1fr));
+    grid-gap: 6px;
+
+    @media (--sm) {
+      grid-template-columns: repeat(5, minmax(80px, 1fr));
+      grid-gap: 10px;
+    }
+
+    @media (--md) {
+      grid-template-columns: repeat(4, minmax(160px, 1fr));
+      grid-gap: 20px;
+    }
+  }
+
+  --flex-container: {
+    display: flex;
+    flex-wrap: wrap;
+  };
+
+  --flex-child: {
+    & > * {
+      flex: 1 0 5em;
+    }
+  }
+
+  --flex-center: {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* --flex-vertical-align: {
+    display: flex;
+    align-items: center;
+  } */
+
+  --wrap: {
+    margin: 0 auto;
+    /* default width 1110 */
+    width: 1150px;
+    padding: 0 20px;
+  }
+
+  --wrap-wide: {
+    margin: 0 auto;
+    padding: 0 20px;
+    /* default width 1226 */
+    max-width: 1266px;
+  }
+}
+
+/* .wrap {
+  margin: 0 auto;
+  padding: 0 20px;
+
+  @media (--desktop) {
+    width: 1366px;
+    padding: 0 40px;
+  }
+} */
+
+/* .flex {
+  @apply --flex-container;
+
+  justify-content: space-between;
+  align-items: center;
+} */
