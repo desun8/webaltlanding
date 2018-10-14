@@ -1,0 +1,65 @@
+.custom-checkbox {
+  @apply --trans;
+
+  position: relative;
+  display: block;
+  padding-left: 50px;
+  padding-right: 20px;
+  cursor: pointer;
+  user-select: none;
+
+  &:hover {
+    /* On mouse-over, add a grey background color */
+
+    /* & .custom-checkbox_input ~ .custom-checkbox_checkmark {
+      background-color: #ccc;
+    } */
+    opacity: 0.7;
+  }
+
+  &_checkmark {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 36px;
+    height: 36px;
+    border: 1px solid #f6f6f6;
+    border-radius: 5px;
+    transform: translate3d(0, -50%, 0);
+
+    &::after {
+      @apply --trans;
+
+      content: "";
+      position: absolute;
+      visibility: hidden;
+      opacity: 0;
+      left: 11px;
+      top: 5px;
+      width: 12px;
+      height: 20px;
+      border: solid #f6f6f6;
+      border-width: 0 4px 4px 0;
+      transform: rotate3d(0, 0, 1, 45deg);
+    }
+  }
+
+  &_input {
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+    cursor: pointer;
+
+    &:checked {
+      & ~ .custom-checkbox_checkmark {
+        background-color: transparent;
+        border-color: #f6f6f6;
+
+        &::after {
+          visibility: visible;
+          opacity: 1;
+        }
+      }
+    }
+  }
+}

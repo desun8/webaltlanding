@@ -1,0 +1,19 @@
+.sample {
+  position: relative;
+  padding-top: 150px;
+  padding-bottom: 140px;
+  background-color: #323232;
+  overflow: hidden;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -25%;
+    width: 100%;
+    height: 400%;
+    background: #fff;
+    opacity: 0.1;
+    transform: rotate3d(0, 0, 1, 20deg);
+  }
+}

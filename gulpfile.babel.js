@@ -3,17 +3,20 @@ import gulp from 'gulp';
 import rename from 'gulp-rename';
 import browserSync from 'browser-sync';
 import sourceMaps from 'gulp-sourcemaps';
+import fs from 'fs-extra';
 // HTML
 import fileInclude from 'gulp-file-include';
-// Css
+// PostCss
 import cssNano from 'cssnano';
 import postCss from 'gulp-postcss';
 import patritialImport from 'postcss-partial-import';
 import cssNext from 'postcss-cssnext';
 import extend from 'postcss-extend';
 import nested from 'postcss-nested';
+import sprites from 'postcss-sprites';
 // Img
 import imgMin from 'gulp-imagemin';
+import spritesmith from 'gulp.spritesmith';
 
 // Path
 const buildPath = './build';
@@ -33,9 +36,19 @@ const path = {
     dest: buildPath,
   },
   img: {
-    src: './src/img/**/*.{png,jpeg,jpg}',
+    src: './src/img/*.{png,jpeg,jpg}',
     dest: `${buildPath}/img`,
   },
+  sprite: {
+    src: './src/img/sprite/',
+    dest: './src/img/',
+  },
+};
+
+const css = fs.readFileSync(`${buildPath}/style.css`, 'utf8');
+const opts = {
+  stylesheetPath: './src/img/spritejpg.css',
+  spritePath: `${buildPath}/img/sprite.jpg`,
 };
 
 // PostCss plugins
@@ -50,7 +63,8 @@ const postCssPlugins = [
   }),
   nested,
   extend,
-  cssNano({ preset: 'default' }),
+  sprites(opts),
+  // cssNano({ preset: 'default' }),
 ];
 
 // HTML tasks
@@ -86,6 +100,26 @@ function imageMin(done) {
   done();
 }
 
+function spritepng(done) {
+  gulp.src(`${path.sprite.src}/*.png`)
+    .pipe(spritesmith({
+      imgName: 'sprite.png',
+      cssName: 'spritepng.css',
+    }))
+    .pipe(gulp.dest(path.sprite.dest));
+  done();
+}
+
+function spritejpg(done) {
+  gulp.src(`${path.sprite.src}/*.{.jpeg,jpg}`)
+    .pipe(spritesmith({
+      imgName: 'sprite.jpg',
+      cssName: 'spritejpg.css',
+    }))
+    .pipe(gulp.dest(path.sprite.dest));
+  done();
+}
+
 // Core tasks
 function watch(done) {
   gulp.watch(path.html.src, htmlInclude);
@@ -104,6 +138,9 @@ function serve(done) {
 // Tasks
 export { imageMin as imagemin };
 
+export const sprite = gulp.series(spritepng, spritejpg);
+
 const def = gulp.parallel(watch, serve);
+// export const image = gulp.series(sprite, imageMin);
 
 export default def;

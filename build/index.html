@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
   <link rel="stylesheet" href="style.css">
   <title>Web Alternative</title>
 </head>
@@ -32,10 +34,12 @@
   <main class="page-main">
     <section class="hero">
   <div class="hero_gradient"></div>
-  <div class="hero_wrap">
+  <div class="hero_wrap animated lightSpeedIn delay-2s">
     <h1 class="hero_title  c-white"><i class="h1-small">Настройка контекстной рекламы в</i> Яндекс Директ и Google Adwords</h1>
     <p class="hero_text  c-white">Правильная настройка контекстной рекламы <b>За 15</b> дней с гарантией целевого трафика</p>
-    <button class="btn" type="button">Настроить мне</button>
+    <button class="btn" type="button">
+       <span class="btn_title">Настроить мне</span>
+    </button>
   </div>
 </section>
     <section class="welcome">
@@ -49,9 +53,19 @@
       пользователь сам прикладывает усилия, чтобы отыскать ваше рекламное сообщение.</p>
 
     <div class="welcome-ads">
-      <div class="welcome-ads_item"><img src="./img/g-scr.jpg" alt="Google реклама"></div>
-      <div class="welcome-ads_item"><img src="./img/y-scr.jpg" alt="Яндекс реклама"></div>
+      <div class="welcome-ads_item">
+        <img src="./img/g-scr.jpg" alt="Google реклама">
+      </div>
+      <div class="welcome-ads_item">
+        <img src="./img/y-scr.jpg" alt="Яндекс реклама">
+      </div>
     </div>
+  </div>
+
+  <div class="welcome_wave">
+    <svg width="1920" height="150" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M0 150V15.5S162.5 75.982 416.5 91c107.13 6.334 159.114-15.267 207.084-35.2C689.348 28.472 747.569 4.28 930 59.5c223.86 67.762 267.74 50.439 358.83 14.476C1326.11 59.255 1371.31 41.41 1440 25c236.5-56.5 480 3.5 480 3.5V150H0z" fill="#fff"/>
+    </svg>
   </div>
 </section>
     <section class="difference">
@@ -60,6 +74,7 @@
 
     <div class="type-ads">
       <div class="type-ads_item  card-dif  card-dif--trad">
+        <i class="card-dif_icon"></i>
         <div class="card-dif_img">
           <img src="./img/trad-ads.png" alt="Традиционная реклама">
         </div>
@@ -68,120 +83,204 @@
           от того, что он собирался посмотреть или почитать.</p>
       </div>
       <div class="type-ads_item  card-dif  card-dif--cont">
+        <i class="card-dif_icon"></i>
         <div class="card-dif_img">
           <img src="./img/cont-ads.png" alt="Контекстная реклама">
         </div>
         <h3>Контекстная реклама</h3>
         <p>Контекстная реклама не переключает внимание пользователя. Она не борется с ним, а идет ему навстречу.
-          Контекстная реклама показывает посетителю лишь те объявления, которые прямо связаны с тем, что его в данный
-          момент интересует.</p>
+          Контекстная реклама показывает посетителю <em><strong>лишь те</strong></em> объявления, которые прямо <em><strong>связаны</strong></em> с тем, что его в данный
+          момент <em><strong>интересует</strong></em>.</p>
       </div>
+      <i class="type-ads_bg-icon  type-ads_bg-icon--bad"></i>
+      <i class="type-ads_bg-icon  type-ads_bg-icon--good"></i>
     </div>
   </div>
 </section>
     <section class="feedback-mid">
   <div class="wrap">
-      <div class="feedback-mid_text">
-          <p>Получить <strong>больше посетителей</strong> и <strong>продаж</strong> очень просто!</p>
-          <p class="text">Оставьте свою заявку!  Наши менеджеры свяжутся с Вами в удобное время и ответят на все интересующие вопросы.</p>    
-      </div>
-     
-      <button class="btn" type="button">Оставить заявку</button>
+    <div class="feedback-mid_text">
+      <p>Получить <em><strong>больше посетителей</strong></em> и <em><strong>продаж</strong></em> очень просто!</p>
+      <p class="text"><em><strong>Оставьте свою заявку!</strong></em> Наши менеджеры свяжутся с Вами в удобное время и ответят на все
+        интересующие вопросы.</p>
+    </div>
+
+    <div class="feedback-mid_btn">
+      <button id="modalOpen" class="btn" type="button">
+        <span class="btn_title">Оставить заявку</span>
+      </button>
+      <div class="btn-animate animated pulse slow infinite"></div>
+    </div>
+    <i class="feedback-mid_icon"></i>
   </div>
 </section>
     <section class="principle">
   <div class="wrap">
-    <h2>Принципы, которым мы следуем!</h2>
+    <h2 class="h2-mb-small">Принципы, которым мы следуем!</h2>
 
     <div class="type-principle">
-      <div>
+      <div class="type-principle_item">
         <h4>Целевая аудитория</h4>
         <p>Качественная проработка минус слов, которая исключает нецелевые посещения сайта.</p>
-        <img src="" alt="">
+        <div class="type-principle_img  type-principle_img--target"></div>
       </div>
-      <div>
+      <div class="type-principle_item  type-principle_item--divide">
         <h4>Максимальных охват</h4>
         <p>Большое количество ключевых слов 500 - 1000</p>
         <p>Использование всех рекламных площадок Яндекс Директ & Google AdWords</p>
         <p>Написание релевантных объявлений с конверсией от 10%</p>
-        <img src="" alt="">
+        <div class="type-principle_img  type-principle_img--area"></div>
       </div>
-      <div>
+      <div class="type-principle_item">
         <h4>Минимальная цена</h4>
         <p>Достигается за счет подключения бит менеджера в Яндекс Директ, и установкой скриптов в Google AdWords.</p>
-        <img src="" alt="">
+        <div class="type-principle_img  type-principle_img--price"></div>
       </div>
     </div>
   </div>
 </section>
     <section class="analytics">
-  <h2>Аналитика сайта</h2>
-  <p>Подключаем аналитику сайта: Яндекс метрику, Гугл Аналитикс, Коллтрекинг для отслеживания эффективности сайта. Устанавливаем цели на сайте: отправка заявки, заполнение форм, копирование почты, клики по элементам сайта, отправка сообщений в чат и др.</p>
-
-  <div class="analytics-tools">
-    <img src="" alt="">
-    <img src="" alt="">
-    <img src="" alt="">
+  <div class="analytics_bg"></div>
+  <div class="wrap">
+    <h2 class="h2-mb-small  c-white">Аналитика сайта</h2>
+    <p class="c-white">Подключаем аналитику сайта: Яндекс метрику, Гугл Аналитикс, Коллтрекинг для отслеживания эффективности сайта. Устанавливаем цели на сайте: отправка заявки, заполнение форм, копирование почты, клики по элементам сайта, отправка сообщений в чат и др.</p>
+  
+    <div class="analytics-tools">
+      <div class="analytics-tools_item">
+        <img src="./img/yMetric.jpg" alt="Яндекс Метрика">
+      </div>
+      <div class="analytics-tools_item">
+        <img src="./img/gAnalytics.jpg" alt="Google Analytics">
+      </div>
+      <div class="analytics-tools_item">
+        <img src="./img/calibri.jpg" alt="Calibri">
+      </div>
+    </div>
   </div>
 </section>
     <section class="bonus">
-  <h2>Бонусы на 5000 рублей, которые Вы получаете работая с нами!</h2>
-  <div>
-    <p>Промокод в Гугл Рекламе на 2000 рублей</p>
-    <img src="" alt="Google AdWords">
-  </div>
-  <div>
-    <p>Промокод на 3000 рублей в сервисе Envybox</p>
-    <img src="" alt="Envybox">
+  <div class="wrap">
+    <p class="bonus_title">Бонусы на <em><strong>5000 рублей</strong></em>, которые Вы получаете работая с нами!</p>
+    <div class="bonus_item">
+      <p>Промокод в Гугл Рекламе на 2000 рублей</p>
+      <img src="./img/gAdwords.jpg" alt="Google AdWords">
+    </div>
+    <div class="bonus_item">
+      <p>Промокод на 3000 рублей в сервисе Envybox</p>
+      <img src="./img/envybox.jpg" alt="Envybox">
+    </div>
   </div>
 </section>
     <section class="sample">
-  <h2>Наши кейсы</h2>
+  <div class="wrap">
+    <h2 class="c-white">Наши кейсы</h2>
 
-  <div class="slider"></div>
+    <div class="slider"></div>
+  </div>
 </section>
     <section class="feedback">
-  <h2>Все еще сомневаетесь на счет необходимости контекстной рекламы?</h2>
-  <p>Оставьте заявку и мы бесплатно подготовим для Вас прогноз кол-ва посетителей сайта, бюджета, кол-ва продаж.</p>
-
-  <form action="">
-    <input type="text" placeholder="Имя" required>
-    <input type="tel" placeholder="Номер телефона" required>
-    <input type="email" placeholder="Email">
-    <textarea name="" id="" cols="30" rows="10" placeholder="Адрес сайта и Описание кейса" required></textarea>
-
-    <input type="checkbox" name="" id="">Нажимая на кнопку "Отправить", я даю согласие на обработку персональных данных.
-
-    <div class="notRobot"></div>
-    <button type="submit">Отправить</button>
-  </form>
+  <div class="feedback_bg"></div>
+  <div class="wrap">
+    <h2 class="c-white">Все еще сомневаетесь на счет необходимости контекстной рекламы?</h2>
+    <p class="c-white">Оставьте заявку и мы <em><strong>бесплатно</strong></em> подготовим для Вас прогноз кол-ва <strong>посетителей</strong> сайта, бюджета, кол-ва <strong>продаж</strong>.</p>
+  
+    <form id="mainForm" name="main-form" class="feedback-form" action="">
+      <input class="feedback-form_name" type="text" name="name" placeholder="Имя" required>
+      <input class="feedback-form_phone" type="tel" name="phone" placeholder="Номер телефона" required>
+      <input class="feedback-form_email" type="email" name="email" placeholder="Email">
+      <textarea class="feedback-form_message" name="message" cols="30" rows="14" placeholder="Адрес сайта и Описание кейса" required></textarea>
+  
+      <label for="feedback-agreements" class="custom-checkbox  feedback-form_agreements">Нажимая на кнопку "Отправить", я даю согласие на обработку персональных данных.
+      <input id="feedback-agreements" class="custom-checkbox_input" type="checkbox" name="agreements" id="">
+        <span class="custom-checkbox_checkmark"></span>
+      </label>
+  
+      <div class="notRobot"></div>
+      <button class="btn  btn--orange" type="submit">Отправить</button>
+    </form>
+  </div>
 </section>
 </main>
 
   <footer class="page-footer">
-  <img src="" alt="" class="logo">
-  <div class="contact">
-    <h5>Контакты</h5>
-    <ul>
-      <li>ул. Волочаевская, 8г</li>
-      <li>+7 (4212)470-300</li>
-      <li>+7 (4212) 25-30-85</li>
-    </ul>
-  </div>
+  <div class="wrap">
+    <img src="./img/logo-mini.png" alt="Web Alternative" class="logo">
+    <div class="contact">
+      <h5>Контакты</h5>
+      <ul class="list-unstyled">
+        <li>ул. Волочаевская, 8г</li>
+        <li>+7 (4212)470-300</li>
+        <li>+7 (4212) 25-30-85</li>
+      </ul>
+    </div>
 
-  <div class="soc">
-    <h5>Мы в соцсетях</h5>
-    <ul>
-      <li>Instagram</li>
-      <li>Facebook</li>
-      <li>Vkontakte</li>
-    </ul>
-  </div>
+    <div class="soc">
+      <h5>Мы в соцсетях</h5>
+      <ul class="list-unstyled">
+        <li><a href="#">Instagram</a></li>
+        <li><a href="#">Facebook</a></li>
+        <li><a href="#">Vkontakte</a></li>
+      </ul>
+    </div>
 
-  <div class="findUs">
-    <span>Найди нас на карте</span>
-    <img src="" alt="">
+    <div class="find-us">
+      <a href="#" class="find-us_link-wrap">
+        <span class="find-us_text">Найди нас на карте</span>
+        <div class="find-us_img"></div>
+      </a>
+    </div>
   </div>
 </footer>
+  
+  <div class="modal">
+  <div class="modal_top">
+    <a href="#">
+      <img src="./img/logo-full.png" alt="web alternative">
+    </a>
+    <button id="modalClose" class="modal_close" type="button">Закрыть</button>
+  </div>
+  <form id="modalForm" name="modal-form" class="feedback-form" action="">
+    <input class="feedback-form_name" type="text" name="name" placeholder="Имя" required>
+    <input class="feedback-form_phone" type="tel" name="phone" placeholder="Номер телефона" required>
+    <input class="feedback-form_email" type="email" name="email" placeholder="Email">
+    <textarea class="feedback-form_message" name="message" cols="30" rows="14" placeholder="Адрес сайта и Описание кейса"
+      required></textarea>
+
+    <label for="modal-feedback-agreements" class="custom-checkbox  feedback-form_agreements">Нажимая на кнопку "Отправить", я
+      даю согласие на обработку персональных данных.
+      <input id="modal-feedback-agreements" class="custom-checkbox_input" type="checkbox" name="agreements" id="">
+      <span class="custom-checkbox_checkmark"></span>
+    </label>
+
+    <div class="notRobot"></div>
+    <button class="btn  btn--orange" type="submit">Отправить</button>
+  </form>
+</div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const btnOpen = document.querySelector('#modalOpen');
+      const btnClose = document.querySelector('#modalClose');
+      const modal = document.querySelector('.modal');
+      const mainPage = document.querySelector('.page-main');
+
+      btnOpen.addEventListener('click', () => {
+        modal.style.height = '100vh';
+        setTimeout(() => { mainPage.style.filter = 'blur(5px)'; }, 200);
+        
+        // document.documentElement.style.cssText = 'height: 100%; overflow: hidden;';
+        document.body.classList.add('noScroll');
+        
+      });
+
+      btnClose.addEventListener('click', () => {
+        modal.style.height = null;
+        mainPage.style.filter = null;
+
+        // document.documentElement.style.cssText = null;
+        document.body.classList.remove('noScroll');
+      });
+    })
+  </script>
 </body>
 </html>

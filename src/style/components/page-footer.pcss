@@ -1,75 +1,85 @@
 .page-footer {
-  padding-bottom: 20px;
+  padding: 50px 0;
+  color: rgba(255, 255, 255, 0.5);
+  background-color: #2e2e2e;
 
-  @media (--sm) {
-    padding-bottom: 28px;
-  }
-
-  @media (--md) {
-    padding-bottom: 24px;
-  }
-}
-
-.pagination {
-  @apply --flex-container;
-  @apply --list-unstyled;
-
-  font-size: 13px;
-  line-height: 18px;
-
-  &_item {
+  & .wrap {
     @apply --flex-container;
-    @apply --trans;
 
-    align-items: center;
-    justify-content: center;
-    width: 34px;
-    height: 34px;
-    border-radius: 50%;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
 
-    &:hover {
-      @media (--md) {
-        background-color: #e6e6e6;
-      }
-    }
+  & .list-unstyled {
+    color: rgba(255, 255, 255, 0.7);
 
-    &--active {
-      background-color: #e6e6e6;
-      font-weight: 700;
-    }
+    & li {
+      margin-bottom: 12px;
 
-    &--title {
-      display: none;
-
-      @media (--sm) {
-        display: flex;
-        width: auto;
-        margin-right: 23px;
-        color: #848484;
-      }
-
-      &:hover {
-        @media (--md) {
-          background-color: transparent;
-        }
-      }
-    }
-
-    &--next {
-      width: auto;
-      margin-left: 23px;
-
-      &:hover {
-        @media (--md) {
-          background-color: transparent;
-          text-decoration: underline;
-        }
+      &:last-child {
+        margin-bottom: 0;
       }
     }
 
     & a {
-      width: 100%;
-      text-align: center;
+      @apply --trans;
+
+      &:hover {
+        color: #fff;
+      }
     }
+  }
+}
+
+.find-us {
+  color: rgba(255, 255, 255, 0.7);
+
+  &_link-wrap {
+    @apply --flex-center;
+    @apply --trans;
+
+    &:hover {
+      color: #fff;
+
+      & .find-us_text {
+        &::before,
+        &::after {
+          background-color: #fff;
+        }
+      }
+    }
+  }
+
+  &_text {
+    max-width: 160px;
+    position: relative;
+    padding-right: 65px;
+
+    &::before,
+    &::after {
+      @apply --trans;
+      
+      content: '';
+      position: absolute;
+      top: 25%;
+      right: 30px;
+      width: 2px;
+      height: 25px;
+      background-color: #bdbdbd;
+      transform: translate3d(0, -50%, 0) rotate3d(0, 0, 1, -40deg);
+    }
+
+    &::after {
+      top: 75%;
+      transform: translate3d(0, -50%, 0) rotate3d(0, 0, 1, 40deg);
+      z-index: 5;
+    }
+  }
+
+  &_img {
+    width: 100px;
+    height: 100px;
+    background-image: url(./img/sprite.png);
+    background-position: -629px 0;
   }
 }

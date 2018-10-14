@@ -1,0 +1,96 @@
+
+.feedback {
+  position: relative;
+  padding-top: 150px;
+  padding-bottom: 95px;
+  text-align: center;
+  overflow: hidden;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:
+      linear-gradient(
+        132.02deg,
+        rgba(0, 0, 0, 0.66) 23.55%,
+        rgba(21, 21, 21, 0.75) 94.02%
+      );
+    z-index: 2;
+  }
+
+  & .wrap {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 5;
+  }
+
+  &_bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(./img/feedback-bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+    /* filter: blur(10px); */
+    z-index: 1;
+  }
+
+  & p {
+    max-width: 650px;
+    margin-bottom: 64px;
+    font-weight: 300;
+  }
+}
+
+.feedback-form {
+  @apply --flex-container;
+
+  justify-content: space-between;
+  max-width: 540px;
+
+  &_name,
+  &_phone,
+  &_email,
+  &_message {
+    margin-bottom: 30px;
+    padding: 15px 20px;
+    background-color: #f6f6f6;
+    border: none;
+    border-radius: 5px;
+  }
+
+  &_name,
+  &_phone {
+    flex: 1 0 5em;
+  }
+
+  &_email,
+  &_message {
+    flex: 1 0 100%;
+  }
+
+  &_phone {
+    margin-left: 30px;
+  }
+
+  &_message {
+    resize: none;
+  }
+
+  &_agreements {
+    margin-bottom: 30px;
+    color: #f6f6f6;
+    text-align: left;
+    font-size: 18px;
+    line-height: 22px;
+  }
+}

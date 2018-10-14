@@ -1,0 +1,24 @@
+<div class="modal">
+  <div class="modal_top">
+    <a href="#">
+      <img src="./img/logo-full.png" alt="web alternative">
+    </a>
+    <button id="modalClose" class="modal_close" type="button">Закрыть</button>
+  </div>
+  <form id="modalForm" name="modal-form" class="feedback-form" action="">
+    <input class="feedback-form_name" type="text" name="name" placeholder="Имя" required>
+    <input class="feedback-form_phone" type="tel" name="phone" placeholder="Номер телефона" required>
+    <input class="feedback-form_email" type="email" name="email" placeholder="Email">
+    <textarea class="feedback-form_message" name="message" cols="30" rows="14" placeholder="Адрес сайта и Описание кейса"
+      required></textarea>
+
+    <label for="modal-feedback-agreements" class="custom-checkbox  feedback-form_agreements">Нажимая на кнопку "Отправить", я
+      даю согласие на обработку персональных данных.
+      <input id="modal-feedback-agreements" class="custom-checkbox_input" type="checkbox" name="agreements" id="">
+      <span class="custom-checkbox_checkmark"></span>
+    </label>
+
+    <div class="notRobot"></div>
+    <button class="btn  btn--orange" type="submit">Отправить</button>
+  </form>
+</div>

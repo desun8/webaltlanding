@@ -1,6 +1,52 @@
 /* All typography styles */
 
-@import url('https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i');
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,500,700&subset=cyrillic');
+
+/* @font-face {
+  font-family: 'Lato';
+  src: url('/fonts/lato-black-webfont.woff') format('woff');
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: url('./fonts/lato-medium-webfont.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: url('./fonts/lato-light-webfont.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: url('./fonts/lato-lightitalic-webfont.woff') format('woff');
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src:
+    url('lato-thin-webfont.woff2') format('woff2'),
+    url('lato-thin-webfont.woff') format('woff');
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src:
+    url('./fonts/lato-thinitalic-webfont.woff2') format('woff2'),
+    url('./fonts/lato-thinitalic-webfont.woff') format('woff');
+  font-weight: 100;
+  font-style: italic;
+} */
 
 /* TITLES */
 @custom-selector :--all-title h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6;
@@ -15,7 +61,7 @@ h1 {
   color: var(--black);
   font-size: 46px;
   line-height: 50px;
-  font-weight: 600;
+  font-weight: 900;
 }
 
 h2 {
@@ -43,11 +89,11 @@ h4 {
 }
 
 h5 {
-  margin-bottom: 4px;
+  margin-bottom: 12px;
   color: var(--black);
-  font-size: 10px;
-  line-height: 10px;
-  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 500;
 }
 
 .h1-small {
@@ -58,6 +104,10 @@ h5 {
 .h2-large {
   font-size: 42px;
   line-height: 48px;
+}
+
+.h2-mb-small {
+  margin-bottom: 62px;
 }
 
 /* PARAGRAPHS and other TEXT */

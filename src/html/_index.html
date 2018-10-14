@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
   <link rel="stylesheet" href="style.css">
   <title>Web Alternative</title>
 </head>
@@ -13,5 +15,33 @@
   @@include("./page-main.html")
 
   @@include("./page-footer.html")
+  
+  @@include("./modal.html")
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const btnOpen = document.querySelector('#modalOpen');
+      const btnClose = document.querySelector('#modalClose');
+      const modal = document.querySelector('.modal');
+      const mainPage = document.querySelector('.page-main');
+
+      btnOpen.addEventListener('click', () => {
+        modal.style.height = '100vh';
+        setTimeout(() => { mainPage.style.filter = 'blur(5px)'; }, 200);
+        
+        // document.documentElement.style.cssText = 'height: 100%; overflow: hidden;';
+        document.body.classList.add('noScroll');
+        
+      });
+
+      btnClose.addEventListener('click', () => {
+        modal.style.height = null;
+        mainPage.style.filter = null;
+
+        // document.documentElement.style.cssText = null;
+        document.body.classList.remove('noScroll');
+      });
+    })
+  </script>
 </body>
 </html>
