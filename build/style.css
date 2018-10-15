@@ -319,8 +319,13 @@ body {
   }
 } */
 .noScroll {
-  height: 100%;
-  overflow: hidden;
+  /* height: 100%;
+  overflow: hidden; */
+  /* position: fixed;  */
+  overflow-y: scroll;
+  width: 100%;
+  /* position: fixed; */
+  /* overflow-y: scroll; */
 }
 /* .jsHide {
   display: none;
@@ -960,8 +965,8 @@ button {
   margin-left: 0;
 }
 .welcome-ads_item:hover {
-    -webkit-box-shadow: 0 4px 4px rgba(0, 0, 0, .25);
-            box-shadow: 0 4px 4px rgba(0, 0, 0, .25);
+    -webkit-box-shadow: 10px 10px 30px rgba(0, 0, 0, .1);
+            box-shadow: 10px 10px 30px rgba(0, 0, 0, .1);
 }
 .difference {
    padding-top: 150px;
@@ -1129,11 +1134,26 @@ button {
   padding: 0 42px;
   z-index: 2;
 }
+.feedback-mid_text {
+    position: relative;
+    padding-left: 20px;
+}
+.feedback-mid_text::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 2px;
+  height: 100%;
+  background-color: #fff;
+  opacity: 0.5;
+}
 .feedback-mid_btn {
     position: relative;
 }
 .feedback-mid .text {
   max-width: 510px;
+  margin-bottom: 0;
   font-size: 20px;
   line-height: 24px;
 }

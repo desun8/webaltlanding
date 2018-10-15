@@ -1,25 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="jquery.custom-scroll.css">
   <title>Web Alternative</title>
 </head>
+
 <body>
   @@include("./page-header.html")
 
   @@include("./page-main.html")
 
   @@include("./page-footer.html")
-  
+
   @@include("./modal.html")
+
+  <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+    crossorigin="anonymous"></script>
+
+  <script src="./jquery.custom-scroll.min.js"></script>
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.css">
+  <script src="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.js"></script>
 
   <script>
     document.addEventListener('DOMContentLoaded', () => {
+      // DISABLE SCROLL
+      // DESKTOP
+      // spacebar: 32, pageup: 33, pagedown: 34, end: 35, home: 36
+      // left: 37, up: 38, right: 39, down: 40,
+      // (Source: http://stackoverflow.com/a/4770179)
+      var keys = [32, 33, 34, 35, 36, 37, 38, 39, 40];
+
+      function preventDefault(e) {
+        e = e || window.event;
+        if (e.preventDefault)
+          e.preventDefault();
+        e.returnValue = false;
+      }
+
+      function keydown(e) {
+        for (var i = keys.length; i--;) {
+          if (e.keyCode === keys[i]) {
+            preventDefault(e);
+            return;
+          }
+        }
+      }
+
+      function wheel(e) {
+        preventDefault(e);
+      }
+
+      function disable_scroll() {
+        if (window.addEventListener) {
+          window.addEventListener('DOMMouseScroll', wheel, false);
+        }
+        window.onmousewheel = document.onmousewheel = wheel;
+        document.onkeydown = keydown;
+        disable_scroll_mobile();
+        // new SimpleBar(document.body);
+      }
+
+      function enable_scroll() {
+        if (window.removeEventListener) {
+          window.removeEventListener('DOMMouseScroll', wheel, false);
+        }
+        window.onmousewheel = document.onmousewheel = document.onkeydown = null;
+        enable_scroll_mobile();
+      }
+
+      // My improvement
+
+      // MOBILE
+      function disable_scroll_mobile() {
+        document.addEventListener('touchmove', preventDefault, false);
+      }
+
+      function enable_scroll_mobile() {
+        document.removeEventListener('touchmove', preventDefault, false);
+      }
+      // END
+
+
       const btnOpen = document.querySelector('#modalOpen');
       const btnClose = document.querySelector('#modalClose');
       const modal = document.querySelector('.modal');
@@ -27,11 +95,20 @@
 
       btnOpen.addEventListener('click', () => {
         modal.style.height = '100vh';
-        setTimeout(() => { mainPage.style.filter = 'blur(5px)'; }, 200);
-        
+        setTimeout(() => {
+          mainPage.style.filter = 'blur(5px)';
+        }, 200);
+
         // document.documentElement.style.cssText = 'height: 100%; overflow: hidden;';
-        document.body.classList.add('noScroll');
-        
+        // document.body.classList.add('noScroll');
+        // add listener to disable scroll
+        // window.addEventListener('scroll', noscroll);
+
+        $(document.body).customScroll();
+
+        disable_scroll();
+        // disable_scroll_mobile();
+
       });
 
       btnClose.addEventListener('click', () => {
@@ -39,9 +116,39 @@
         mainPage.style.filter = null;
 
         // document.documentElement.style.cssText = null;
-        document.body.classList.remove('noScroll');
+        // document.body.classList.remove('noScroll');
+        // Remove listener to disable scroll
+        // window.removeEventListener('scroll', noscroll);
+
+        enable_scroll();
+        $(document.body).customScroll('destroy');
+      });
+
+
+      // Do animation when element is visible
+      (function ($, win) {
+        $.fn.inViewport = function (cb) {
+          return this.each(function (i, el) {
+            function visPx() {
+              var H = $(this).height(),
+                r = el.getBoundingClientRect(),
+                t = r.top,
+                b = r.bottom;
+              return cb.call(el, Math.max(0, t > 0 ? H - t : (b < H ? b : H)));
+            }
+            visPx();
+            $(win).on("resize scroll", visPx);
+          });
+        };
+      }(jQuery, window));
+
+
+
+      $(".feedback-mid_text").inViewport(function (px) {
+        if (px) $(this).addClass("animated fadeInLeft delay-4s");
       });
     })
   </script>
 </body>
+
 </html>

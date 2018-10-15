@@ -31,12 +31,29 @@
     z-index: 2;
   }
 
+  &_text {
+    position: relative;
+    padding-left: 20px;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 2px;
+      height: 100%;
+      background-color: #fff;
+      opacity: 0.5;
+    }
+  }
+
   &_btn {
     position: relative;
   }
 
   & .text {
     max-width: 510px;
+    margin-bottom: 0;
     font-size: 20px;
     line-height: 24px;
   }

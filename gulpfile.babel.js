@@ -3,7 +3,6 @@ import gulp from 'gulp';
 import rename from 'gulp-rename';
 import browserSync from 'browser-sync';
 import sourceMaps from 'gulp-sourcemaps';
-import fs from 'fs-extra';
 // HTML
 import fileInclude from 'gulp-file-include';
 // PostCss
@@ -13,7 +12,6 @@ import patritialImport from 'postcss-partial-import';
 import cssNext from 'postcss-cssnext';
 import extend from 'postcss-extend';
 import nested from 'postcss-nested';
-import sprites from 'postcss-sprites';
 // Img
 import imgMin from 'gulp-imagemin';
 import spritesmith from 'gulp.spritesmith';
@@ -45,11 +43,6 @@ const path = {
   },
 };
 
-const css = fs.readFileSync(`${buildPath}/style.css`, 'utf8');
-const opts = {
-  stylesheetPath: './src/img/spritejpg.css',
-  spritePath: `${buildPath}/img/sprite.jpg`,
-};
 
 // PostCss plugins
 const postCssPlugins = [
@@ -63,7 +56,6 @@ const postCssPlugins = [
   }),
   nested,
   extend,
-  sprites(opts),
   // cssNano({ preset: 'default' }),
 ];
 
