@@ -7,11 +7,33 @@
     @apply --flex-container;
 
     justify-content: space-between;
+
+    @media (--tablet) {
+      padding: 15px 13px;
+    }
   }
 
   &_logo {
     @apply --flex-container;
 
     align-items: center;
+
+    @media (--mobile) {
+      width: 122px;
+    }
+  }
+
+  &_menu {
+    display: none;
+    width: 30px;
+    height: 30px;
+    background-color: #404040;
+    box-shadow: 1px 3px 4px rgba(0, 0, 0, 0.2);
+    border: none;
+    border-radius: 50%;
+
+    @media (--tablet) {
+      display: block;
+    }
   }
 }

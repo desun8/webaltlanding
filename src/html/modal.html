@@ -1,24 +1,46 @@
-<div class="modal">
+<div id="modalFeedback" class="modal  modal--form">
   <div class="modal_top">
     <a href="#">
       <img src="./img/logo-full.png" alt="web alternative">
     </a>
-    <button id="modalClose" class="modal_close" type="button">Закрыть</button>
+    <button id="modalFeedbackClose" class="modal_close" type="button"><span class="hideMobile">Закрыть</span></button>
   </div>
   <form id="modalForm" name="modal-form" class="feedback-form" action="">
-    <input class="feedback-form_name" type="text" name="name" placeholder="Имя" required>
-    <input class="feedback-form_phone" type="tel" name="phone" placeholder="Номер телефона" required>
-    <input class="feedback-form_email" type="email" name="email" placeholder="Email">
-    <textarea class="feedback-form_message" name="message" cols="30" rows="14" placeholder="Адрес сайта и Описание кейса"
-      required></textarea>
+    <label class="feedback-form_col-2  feedback-form_required" for="">
+      <input class="feedback-form_name" type="text" name="name" placeholder="Имя" required>
+    </label>
+    <label class="feedback-form_col-2  feedback-form_col-2--phone  feedback-form_required" for="">
+      <input class="feedback-form_phone" type="tel" name="phone" placeholder="Номер телефона" required>
+    </label>
+    <label class="feedback-form_col-1" for="">
+      <input class="feedback-form_email" type="email" name="email" placeholder="Email">
+    </label>
+    <label class="feedback-form_col-1  feedback-form_required" for="">
+      <textarea class="feedback-form_message" name="message" cols="30" rows="14" placeholder="Адрес сайта и Описание кейса"
+        required></textarea>
+    </label>
 
     <label for="modal-feedback-agreements" class="custom-checkbox  feedback-form_agreements">Нажимая на кнопку "Отправить", я
       даю согласие на обработку персональных данных.
-      <input id="modal-feedback-agreements" class="custom-checkbox_input" type="checkbox" name="agreements" id="">
+      <input id="modal-feedback-agreements" class="custom-checkbox_input" type="checkbox" name="agreements" required>
       <span class="custom-checkbox_checkmark"></span>
     </label>
 
     <div class="notRobot"></div>
-    <button class="btn  btn--orange" type="submit">Отправить</button>
+    <button id="modalFormSubmit" class="btn  btn--orange" type="submit">Отправить</button>
   </form>
+</div>
+
+<div id="modalOk" class="modal">
+  <div class="modal_top">
+    <a href="#">
+      <img src="./img/logo-full.png" alt="web alternative">
+    </a>
+    <!-- <button id="modalOkClose" class="modal_close" type="button">Закрыть</button> -->
+  </div>
+
+  <div class="modal_submit">
+    <p class="modal_submit-text">Ваша заявка была успешно отправлена!</p>
+    <svg width="150" height="108" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M133.97.293a1 1 0 0 0-1.414 0L59 73.848 16.984 31.832a1 1 0 0 0-1.414 0L.293 47.109a1 1 0 0 0 0 1.414l58.236 58.237a1 1 0 0 0 1.414 0L75.22 91.482c.02-.019.038-.038.055-.059l74.206-74.205a1 1 0 0 0 0-1.414L133.97.293z" fill="url(#paint0_linear)"/><defs><linearGradient id="paint0_linear" x1="78.5" y1="14" x2="63.5" y2="127" gradientUnits="userSpaceOnUse"><stop stop-color="#FFB569"/><stop offset="1" stop-color="#FF9931"/></linearGradient></defs></svg>
+  </div>
 </div>

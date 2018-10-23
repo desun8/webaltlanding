@@ -17,12 +17,19 @@ button {
       #a660ff 151.97%
     );
   color: #fff;
-  font-size: 26px;
-  line-height: 30px;
-  font-weight: 500;
+  font-size: 22px;
+  line-height: 26px;
+  font-weight: 600;
   border: none;
   border-radius: 5px;
   z-index: 5;
+
+  @media (--mobile) {
+    width: 100%;
+    padding: 18px;
+    font-size: 18px;
+    line-height: 22px;
+  }
 
   &::after {
     /* @apply --trans-slow; */
@@ -46,10 +53,12 @@ button {
   }
 
   &:hover {
-    color: #a660ff;
+    @media (--notTablet) {
+      color: #a660ff;
 
-    &::after {
-      opacity: 1;
+      &::after {
+        opacity: 1;
+      }
     }
   }
 
@@ -62,11 +71,13 @@ button {
       );
 
     &:hover {
-      color: #fff;
-      box-shadow: 0px 4px 4px rgba(222, 155, 85, 0.3);
+      @media (--notTablet) {
+        color: #fff;
+        box-shadow: 0px 4px 4px rgba(222, 155, 85, 0.3);
 
-      &::after {
-        opacity: 0;
+        &::after {
+          opacity: 0;
+        }
       }
     }
   }

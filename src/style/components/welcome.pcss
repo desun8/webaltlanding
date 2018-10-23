@@ -4,6 +4,14 @@
   padding-bottom: 190px;
   background-color: #f9f9f9;
 
+  @media (--tablet) {
+    padding-top: 40px;
+  }
+
+  @media (--mobile) {
+    padding-bottom: 110px;
+  }
+
   &_wrap {
     @apply --wrap;
   }
@@ -17,6 +25,14 @@
 
   & p {
     margin-bottom: 42px;
+    font-size: 18px;
+    line-height: 22px;
+
+    @media (--mobile) {
+      margin-bottom: 30px;
+      font-size: 14px;
+      line-height: 18px;
+    }
   }
 }
 
@@ -33,6 +49,17 @@
     margin-left: 52px;
     border-radius: 5px;
     box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
+
+    @media (--tablet) {
+      height: auto;
+      padding: 10px 5px;
+    }
+
+    @media (--mobile) {
+      flex: 1 0 100%;
+      margin-left: 0;
+      margin-bottom: 20px;
+    }
 
     &:first-child {
       margin-left: 0;

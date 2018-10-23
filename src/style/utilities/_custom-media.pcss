@@ -14,6 +14,15 @@
 
 /* Устройства с небольшими диогоналями - для резинновости */
 
+@custom-media --tablet1090 (width < 68.125em);
+@custom-media --tablet980 (width < 61.25em);
+@custom-media --tablet900 (width < 56.25em);
+
+@custom-media --notTablet (width > 48em);
+
+@custom-media --tablet (width <= 48em);
+@custom-media --mobile (width < 47em);
+
 /* @custom-media --tablet800 (width > 50em) and (width < 80em);
 @custom-media --tablet950 (width > 59.375em) and (width < 80em);
 @custom-media --tablet1020 (width >= 63.75em) and (width < 80em);
@@ -38,6 +47,6 @@
 
 /* @custom-media --retina (resolution >= 192dpi); */
 
-@custom-media --sm (width >= 480px);
+/* @custom-media --sm (width >= 480px);
 @custom-media --sm520 (width >= 480px);
-@custom-media --md (width >= 768px);
+@custom-media --md (width >= 768px); */

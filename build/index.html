@@ -5,9 +5,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="format-detection" content="telephone=no">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+  <script
+  src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+  integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
+  crossorigin="anonymous"></script>
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="jquery.custom-scroll.css">
   <title>Web Alternative</title>
 </head>
 
@@ -20,7 +24,7 @@
       </a>
     </div>
 
-    <nav class="page-nav">
+    <nav id="pageMenu" class="page-nav">
       <ul class="page-nav_list">
         <li class="page-nav_item"><a href="#">О студии</a></li>
         <li class="page-nav_item"><a href="#">Портфолио</a></li>
@@ -30,6 +34,8 @@
         <li class="page-nav_item"><a href="#">Контакты</a></li>
       </ul>
     </nav>
+
+    <button id="showPageMenu" class="page-header_menu"></button>
   </div>
 </header>
 
@@ -39,9 +45,9 @@
   <div class="hero_wrap animated fadeInLeft delay-4s">
     <h1 class="hero_title  c-white"><i class="h1-small">Настройка контекстной рекламы в</i> Яндекс Директ и Google Adwords</h1>
     <p class="hero_text  c-white">Правильная настройка контекстной рекламы <b>За 15</b> дней с гарантией целевого трафика</p>
-    <button class="btn" type="button">
+    <a href="#feedback" class="btn">
        <span class="btn_title">Настроить мне</span>
-    </button>
+    </a>
   </div>
 </section>
     <section class="welcome">
@@ -49,9 +55,9 @@
     <h2 class="h2-large">Что такое контекстная реклама?</h2>
 
     <p><strong>Контекстная реклама</strong> — это реклама, содержание которой зависит от интересов пользователя.</p>
-    <p>Контекстная реклама действует <em><strong>избирательно</strong></em>: рекламное сообщение показывается только
-      тем, кто хочет его увидеть. Пользователи проявляют <em><strong>интерес</strong></em> к тем или иным товарам и
-      услугам, а вы предлагаете им <em><strong>помощь</strong></em>, рассказывая о своих предложениях. По сути,
+    <p>Контекстная реклама действует <strong>избирательно</strong>: рекламное сообщение показывается только
+      тем, кто хочет его увидеть. Пользователи проявляют <strong>интерес</strong> к тем или иным товарам и
+      услугам, а вы предлагаете им <strong>помощь</strong>, рассказывая о своих предложениях. По сути,
       пользователь сам прикладывает усилия, чтобы отыскать ваше рекламное сообщение.</p>
 
     <div class="welcome-ads">
@@ -89,10 +95,10 @@
         <div class="card-dif_img">
           <img src="./img/cont-ads.png" alt="Контекстная реклама">
         </div>
-        <h3>Контекстная реклама</h3>
+        <h4>Контекстная реклама</h4>
         <p>Контекстная реклама не переключает внимание пользователя. Она не борется с ним, а идет ему навстречу.
-          Контекстная реклама показывает посетителю <em><strong>лишь те</strong></em> объявления, которые прямо <em><strong>связаны</strong></em> с тем, что его в данный
-          момент <em><strong>интересует</strong></em>.</p>
+          Контекстная реклама показывает посетителю <strong>лишь те</strong> объявления, которые прямо <strong>связаны</strong> с тем, что его в данный
+          момент <strong>интересует</strong>.</p>
       </div>
       <i class="type-ads_bg-icon  type-ads_bg-icon--bad"></i>
       <i class="type-ads_bg-icon  type-ads_bg-icon--good"></i>
@@ -102,8 +108,8 @@
     <section class="feedback-mid">
   <div class="wrap">
     <div class="feedback-mid_text">
-      <p>Получить <em><strong>больше посетителей</strong></em> и <em><strong>продаж</strong></em> очень просто!</p>
-      <p class="text"><em><strong>Оставьте свою заявку!</strong></em> Наши менеджеры свяжутся с Вами в удобное время и ответят на все
+      <p>Получить <strong>больше посетителей</strong> и <strong>продаж</strong> очень просто!</p>
+      <p class="text"><strong>Оставьте свою заявку!</strong> Наши менеджеры свяжутся с Вами в удобное время и ответят на все
         интересующие вопросы.</p>
     </div>
 
@@ -128,14 +134,14 @@
       </div>
       <div class="type-principle_item  type-principle_item--divide">
         <h4>Максимальных охват</h4>
-        <p>Большое количество ключевых слов 500 - 1000</p>
-        <p>Использование всех рекламных площадок Яндекс Директ & Google AdWords</p>
-        <p>Написание релевантных объявлений с конверсией от 10%</p>
+        <p>Большое количество ключевых слов <strong>500 - 1000</strong></p>
+        <p>Использование всех рекламных площадок <strong>Яндекс Директ & Google AdWords</strong></p>
+        <p>Написание релевантных объявлений <strong>с конверсией от 10%</strong></p>
         <div class="type-principle_img  type-principle_img--area"></div>
       </div>
       <div class="type-principle_item">
         <h4>Минимальная цена</h4>
-        <p>Достигается за счет подключения бит менеджера в Яндекс Директ, и установкой скриптов в Google AdWords.</p>
+        <p>Достигается за счет подключения бит менеджера в <strong>Яндекс Директ</strong>, и установкой скриптов в <strong>Google AdWords</strong>.</p>
         <div class="type-principle_img  type-principle_img--price"></div>
       </div>
     </div>
@@ -162,7 +168,7 @@
 </section>
     <section class="bonus">
   <div class="wrap">
-    <p class="bonus_title">Бонусы на <em><strong>5000 рублей</strong></em>, которые Вы получаете работая с нами!</p>
+    <p class="bonus_title">Бонусы на <strong>5000 рублей</strong>, которые Вы получаете работая с нами!</p>
     <div class="bonus_item">
       <p>Промокод в Гугл Рекламе на 2000 рублей</p>
       <img src="./img/gAdwords.jpg" alt="Google AdWords">
@@ -174,31 +180,87 @@
   </div>
 </section>
     <section class="sample">
-  <div class="wrap">
+  <!-- <div class="wrap"> -->
     <h2 class="c-white">Наши кейсы</h2>
 
-    <div class="slider"></div>
-  </div>
+    <div class="slider  owl-carousel">
+      <div class="slider_item slider-elem">
+        <div class="wrap">
+          <div class="slider-elem_text">
+            <h4>Автошкола</h4>
+            <ul>
+              <li>Количество заявок - <span>120</span></li>
+              <li>Стоимость заявки – <span>260</span> рублей</li>
+              <li>Период – <span>3</span> месяца</li>
+              <li>Конверсия – <span>6,1</span>%</li>
+            </ul>
+            <span class="slider-elem_index">01</span>
+          </div>
+        </div>
+        <div class="slider-elem_img"></div>
+      </div>
+
+      <div class="slider_item slider-elem">
+        <div class="wrap">
+          <div class="slider-elem_text">
+            <h4>Мейдо кафе</h4>
+            <ul>
+              <li>Количество заявок - <span>120</span></li>
+              <li>Стоимость заявки – <span>260</span> рублей</li>
+              <li>Период – <span>3</span> месяца</li>
+              <li>Конверсия – <span>6,1</span>%</li>
+            </ul>
+            <span class="slider-elem_index">02</span>
+          </div>
+        </div>
+        <div class="slider-elem_img"></div>
+      </div>
+
+      <div class="slider_item slider-elem">
+        <div class="wrap">
+          <div class="slider-elem_text">
+            <h4>Британика</h4>
+            <ul>
+              <li>Количество заявок - <span>120</span></li>
+              <li>Стоимость заявки – <span>260</span> рублей</li>
+              <li>Период – <span>3</span> месяца</li>
+              <li>Конверсия – <span>6,1</span>%</li>
+            </ul>
+            <span class="slider-elem_index">03</span>
+          </div>
+        </div>
+        <div class="slider-elem_img"></div>
+      </div>
+    </div>
+  <!-- </div> -->
 </section>
-    <section class="feedback">
+    <section id="feedback" class="feedback">
   <div class="feedback_bg"></div>
   <div class="wrap">
-    <h2 class="c-white">Все еще сомневаетесь на счет необходимости контекстной рекламы?</h2>
-    <p class="c-white">Оставьте заявку и мы <em><strong>бесплатно</strong></em> подготовим для Вас прогноз кол-ва <strong>посетителей</strong> сайта, бюджета, кол-ва <strong>продаж</strong>.</p>
+    <h3 class="c-white">Все еще сомневаетесь на счет необходимости контекстной рекламы?</h3>
+    <p class="c-white">Оставьте заявку и мы <strong>бесплатно</strong> подготовим для Вас прогноз кол-ва <strong>посетителей</strong> сайта, бюджета, кол-ва <strong>продаж</strong>.</p>
   
     <form id="mainForm" name="main-form" class="feedback-form" action="">
-      <input class="feedback-form_name" type="text" name="name" placeholder="Имя" required>
-      <input class="feedback-form_phone" type="tel" name="phone" placeholder="Номер телефона" required>
-      <input class="feedback-form_email" type="email" name="email" placeholder="Email">
-      <textarea class="feedback-form_message" name="message" cols="30" rows="14" placeholder="Адрес сайта и Описание кейса" required></textarea>
+      <label class="feedback-form_col-2  feedback-form_required" for="">
+        <input class="feedback-form_name" type="text" name="name" placeholder="Имя" required>
+      </label>
+      <label class="feedback-form_col-2  feedback-form_col-2--phone  feedback-form_required" for="">
+        <input class="feedback-form_phone" type="tel" name="phone" placeholder="Номер телефона" required>
+      </label>
+      <label class="feedback-form_col-1" for="">
+        <input class="feedback-form_email" type="email" name="email" placeholder="Email">
+      </label>
+      <label class="feedback-form_col-1  feedback-form_required" for="">
+        <textarea class="feedback-form_message" name="message" cols="30" rows="14" placeholder="Адрес сайта и Описание кейса" required></textarea>
+      </label>
   
       <label for="feedback-agreements" class="custom-checkbox  feedback-form_agreements">Нажимая на кнопку "Отправить", я даю согласие на обработку персональных данных.
-      <input id="feedback-agreements" class="custom-checkbox_input" type="checkbox" name="agreements" id="">
+      <input id="feedback-agreements" class="custom-checkbox_input" type="checkbox" name="agreements" id="" required>
         <span class="custom-checkbox_checkmark"></span>
       </label>
   
       <div class="notRobot"></div>
-      <button class="btn  btn--orange" type="submit">Отправить</button>
+      <button id="mainFormSubmit" class="btn  btn--orange" type="submit">Отправить</button>
     </form>
   </div>
 </section>
@@ -206,7 +268,7 @@
 
   <footer class="page-footer">
   <div class="wrap">
-    <img src="./img/logo-mini.png" alt="Web Alternative" class="logo">
+    <a href="#"><img src="./img/logo-mini.png" alt="Web Alternative" class="logo"></a>
     <div class="contact">
       <h5>Контакты</h5>
       <ul class="list-unstyled">
@@ -234,160 +296,56 @@
   </div>
 </footer>
 
-  <div class="modal">
+  <div id="modalFeedback" class="modal  modal--form">
   <div class="modal_top">
     <a href="#">
       <img src="./img/logo-full.png" alt="web alternative">
     </a>
-    <button id="modalClose" class="modal_close" type="button">Закрыть</button>
+    <button id="modalFeedbackClose" class="modal_close" type="button"><span class="hideMobile">Закрыть</span></button>
   </div>
   <form id="modalForm" name="modal-form" class="feedback-form" action="">
-    <input class="feedback-form_name" type="text" name="name" placeholder="Имя" required>
-    <input class="feedback-form_phone" type="tel" name="phone" placeholder="Номер телефона" required>
-    <input class="feedback-form_email" type="email" name="email" placeholder="Email">
-    <textarea class="feedback-form_message" name="message" cols="30" rows="14" placeholder="Адрес сайта и Описание кейса"
-      required></textarea>
+    <label class="feedback-form_col-2  feedback-form_required" for="">
+      <input class="feedback-form_name" type="text" name="name" placeholder="Имя" required>
+    </label>
+    <label class="feedback-form_col-2  feedback-form_col-2--phone  feedback-form_required" for="">
+      <input class="feedback-form_phone" type="tel" name="phone" placeholder="Номер телефона" required>
+    </label>
+    <label class="feedback-form_col-1" for="">
+      <input class="feedback-form_email" type="email" name="email" placeholder="Email">
+    </label>
+    <label class="feedback-form_col-1  feedback-form_required" for="">
+      <textarea class="feedback-form_message" name="message" cols="30" rows="14" placeholder="Адрес сайта и Описание кейса"
+        required></textarea>
+    </label>
 
     <label for="modal-feedback-agreements" class="custom-checkbox  feedback-form_agreements">Нажимая на кнопку "Отправить", я
       даю согласие на обработку персональных данных.
-      <input id="modal-feedback-agreements" class="custom-checkbox_input" type="checkbox" name="agreements" id="">
+      <input id="modal-feedback-agreements" class="custom-checkbox_input" type="checkbox" name="agreements" required>
       <span class="custom-checkbox_checkmark"></span>
     </label>
 
     <div class="notRobot"></div>
-    <button class="btn  btn--orange" type="submit">Отправить</button>
+    <button id="modalFormSubmit" class="btn  btn--orange" type="submit">Отправить</button>
   </form>
 </div>
 
-  <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
-    crossorigin="anonymous"></script>
+<div id="modalOk" class="modal">
+  <div class="modal_top">
+    <a href="#">
+      <img src="./img/logo-full.png" alt="web alternative">
+    </a>
+    <!-- <button id="modalOkClose" class="modal_close" type="button">Закрыть</button> -->
+  </div>
 
-  <script src="./jquery.custom-scroll.min.js"></script>
-  
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.css">
-  <script src="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.js"></script>
+  <div class="modal_submit">
+    <p class="modal_submit-text">Ваша заявка была успешно отправлена!</p>
+    <svg width="150" height="108" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M133.97.293a1 1 0 0 0-1.414 0L59 73.848 16.984 31.832a1 1 0 0 0-1.414 0L.293 47.109a1 1 0 0 0 0 1.414l58.236 58.237a1 1 0 0 0 1.414 0L75.22 91.482c.02-.019.038-.038.055-.059l74.206-74.205a1 1 0 0 0 0-1.414L133.97.293z" fill="url(#paint0_linear)"/><defs><linearGradient id="paint0_linear" x1="78.5" y1="14" x2="63.5" y2="127" gradientUnits="userSpaceOnUse"><stop stop-color="#FFB569"/><stop offset="1" stop-color="#FF9931"/></linearGradient></defs></svg>
+  </div>
+</div>
 
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      // DISABLE SCROLL
-      // DESKTOP
-      // spacebar: 32, pageup: 33, pagedown: 34, end: 35, home: 36
-      // left: 37, up: 38, right: 39, down: 40,
-      // (Source: http://stackoverflow.com/a/4770179)
-      var keys = [32, 33, 34, 35, 36, 37, 38, 39, 40];
-
-      function preventDefault(e) {
-        e = e || window.event;
-        if (e.preventDefault)
-          e.preventDefault();
-        e.returnValue = false;
-      }
-
-      function keydown(e) {
-        for (var i = keys.length; i--;) {
-          if (e.keyCode === keys[i]) {
-            preventDefault(e);
-            return;
-          }
-        }
-      }
-
-      function wheel(e) {
-        preventDefault(e);
-      }
-
-      function disable_scroll() {
-        if (window.addEventListener) {
-          window.addEventListener('DOMMouseScroll', wheel, false);
-        }
-        window.onmousewheel = document.onmousewheel = wheel;
-        document.onkeydown = keydown;
-        disable_scroll_mobile();
-        // new SimpleBar(document.body);
-      }
-
-      function enable_scroll() {
-        if (window.removeEventListener) {
-          window.removeEventListener('DOMMouseScroll', wheel, false);
-        }
-        window.onmousewheel = document.onmousewheel = document.onkeydown = null;
-        enable_scroll_mobile();
-      }
-
-      // My improvement
-
-      // MOBILE
-      function disable_scroll_mobile() {
-        document.addEventListener('touchmove', preventDefault, false);
-      }
-
-      function enable_scroll_mobile() {
-        document.removeEventListener('touchmove', preventDefault, false);
-      }
-      // END
-
-
-      const btnOpen = document.querySelector('#modalOpen');
-      const btnClose = document.querySelector('#modalClose');
-      const modal = document.querySelector('.modal');
-      const mainPage = document.querySelector('.page-main');
-
-      btnOpen.addEventListener('click', () => {
-        modal.style.height = '100vh';
-        setTimeout(() => {
-          mainPage.style.filter = 'blur(5px)';
-        }, 200);
-
-        // document.documentElement.style.cssText = 'height: 100%; overflow: hidden;';
-        // document.body.classList.add('noScroll');
-        // add listener to disable scroll
-        // window.addEventListener('scroll', noscroll);
-
-        $(document.body).customScroll();
-
-        disable_scroll();
-        // disable_scroll_mobile();
-
-      });
-
-      btnClose.addEventListener('click', () => {
-        modal.style.height = null;
-        mainPage.style.filter = null;
-
-        // document.documentElement.style.cssText = null;
-        // document.body.classList.remove('noScroll');
-        // Remove listener to disable scroll
-        // window.removeEventListener('scroll', noscroll);
-
-        enable_scroll();
-        $(document.body).customScroll('destroy');
-      });
-
-
-      // Do animation when element is visible
-      (function ($, win) {
-        $.fn.inViewport = function (cb) {
-          return this.each(function (i, el) {
-            function visPx() {
-              var H = $(this).height(),
-                r = el.getBoundingClientRect(),
-                t = r.top,
-                b = r.bottom;
-              return cb.call(el, Math.max(0, t > 0 ? H - t : (b < H ? b : H)));
-            }
-            visPx();
-            $(win).on("resize scroll", visPx);
-          });
-        };
-      }(jQuery, window));
-
-
-
-      $(".feedback-mid_text").inViewport(function (px) {
-        if (px) $(this).addClass("animated fadeInLeft delay-4s");
-      });
-    })
-  </script>
+  <script src="./owl.carousel.min.js"></script>
+  <script src="https://unpkg.com/imask"></script>
+  <script src="./script.js"></script>
 </body>
 
 </html>

@@ -2,6 +2,14 @@
   padding-top: 250px;
   padding-bottom: 260px;
 
+  @media (--tablet) {
+    padding: 50px 0;
+  }
+
+  @media (--mobile) {
+    padding-bottom: 30px;
+  }
+
   & .wrap {
     @apply --flex-container;
     @apply --flex-child;
@@ -10,10 +18,14 @@
   &_title {
     flex-basis: 100% !important;
     margin-bottom: 52px;
-    font-size: 32px;
-    line-height: 38px;
-    font-weight: 300;
-    font-style: italic;
+    font-size: 26px;
+    line-height: 30px;
+
+    @media (--mobile) {
+      margin-bottom: 40px;
+      font-size: 18px;
+      line-height: 22px;
+    }
   }
 
   &_item {
@@ -23,6 +35,30 @@
     padding: 10px 40px;
     box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
     border-radius: 5px;
+    background: #fff;
+    /* background-image: url(./img/gAdwords.jpg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center right; */
+
+    @media (--tablet980) {
+      padding: 10px 20px;
+    }
+
+    @media (--tablet900) {
+      flex-wrap: wrap;
+      padding: 20px;
+      text-align: center;
+    }
+
+    @media (--mobile) {
+      flex: 1 0 100% !important;
+      flex-wrap: nowrap;
+      justify-content: space-between;
+      margin-left: 0;
+      margin-bottom: 20px;
+      text-align: left;
+    }
 
     &:first-of-type {
       margin-left: 0;
@@ -30,6 +66,30 @@
 
     & p {
       padding-right: 70px;
+      font-size: 18px;
+      line-height: 22px;
+      font-weight: 600;
+
+      @media (--tablet1090) {
+        padding-right: 30px;
+      }
+
+      @media (--tablet900) {
+        padding-right: 0;
+        margin-bottom: 20px;
+      }
+
+      @media (--mobile) {
+        max-width: 110px;
+        margin-bottom: 0;
+        font-size: 12px;
+        line-height: 16px;
+      }
+    }
+
+    & img {
+      max-width: 110px;
+      max-height: 58px;
     }
   }
 }

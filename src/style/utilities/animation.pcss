@@ -23,7 +23,9 @@
     }
 
     &:hover::after {
-      width: 100%;
+      @media (--notTablet) {
+        width: 100%;
+      }
     }
   };
 }

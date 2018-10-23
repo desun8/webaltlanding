@@ -1,6 +1,6 @@
 .feedback-mid {
   position: relative;
-  padding: 62px 0 42px;
+  padding: 65px 0 75px;
   background:
     linear-gradient(
       271.54deg,
@@ -8,6 +8,10 @@
       #f2894d 79.54%
     );
   overflow: hidden;
+
+  @media (--tablet) {
+    padding: 24px 0;
+  }
 
   &::after {
     content: '';
@@ -19,6 +23,10 @@
     background: #fff;
     opacity: 0.1;
     transform: rotate3d(0, 0, 1, 20deg);
+
+    @media (--mobile) {
+      right: -35%;
+    }
   }
 
   & .wrap {
@@ -29,11 +37,32 @@
     align-items: center;
     padding: 0 42px;
     z-index: 2;
+
+    @media (--mobile) {
+      padding: 0 20px;
+    }
   }
 
   &_text {
     position: relative;
     padding-left: 20px;
+
+    @media (--tablet1090) {
+      max-width: 600px;
+    }
+
+    @media (--tablet980) {
+      max-width: 500px;
+    }
+
+    @media (--tablet) {
+      max-width: 380px;
+    }
+
+    @media (--mobile) {
+      padding-left: 10px;
+      margin-bottom: 25px;
+    }
 
     &::before {
       content: '';
@@ -49,19 +78,34 @@
 
   &_btn {
     position: relative;
+
+    @media (--mobile) {
+      width: 100%;
+    }
   }
 
   & .text {
-    max-width: 510px;
     margin-bottom: 0;
-    font-size: 20px;
-    line-height: 24px;
+    font-size: 16px;
+    line-height: 20px;
+    max-width: 680px;
+    color: #fff;
+    
+    @media (--mobile) {
+      font-size: 14px;
+      line-height: 18px;
+    }
   }
 
   & p {
-    margin-bottom: 18px;
+    margin-bottom: 16px;
     max-width: 680px;
     color: #fff;
+
+    @media (--mobile) {
+      font-size: 18px;
+      line-height: 22px;
+    }
   }
 
   & .btn {
@@ -77,6 +121,10 @@
     height: 138%;
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: 6px;
+
+    @media (--mobile) {
+      display: none;
+    }
 
     &::after {
       content: '';
@@ -99,5 +147,9 @@
     height: 68px;
     background-image: url(./img/sprite.png);
     background-position: -629px -100px;
+
+    @media (--mobile) {
+      display: none;
+    }
   }
 }

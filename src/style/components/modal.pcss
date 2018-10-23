@@ -2,17 +2,39 @@
   /* @apply --trans-slow; */
 
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   position: fixed;
-  top: 0;
+  top: -100%;
   right: 0;
-  width: 100vw;
-  height: 0;
+  width: 100.5vw;
+  height: 100vh;
   background-color: rgba(0, 0, 0, 0.9);
   overflow: hidden;
   z-index: 100;
-  transition: all 300ms ease-out;
+  visibility: hidden;
+  opacity: 0;
+  transition: top 250ms ease;
+
+  @media (--tablet) {
+    width: 100vw;
+  }
+
+  @media (--mobile) {
+    /* padding-top: 110px; */
+    padding-left: 20px;
+    padding-right: 20px;
+    justify-content: space-between;
+    overflow-y: scroll;
+  }
+/* 
+  &--form {
+    @media (--mobile) {
+      padding-top: 110px;
+    justify-content: space-around;
+    }
+  } */
 
   &_top {
     display: flex;
@@ -23,6 +45,11 @@
     left: 0;
     width: 100%;
     padding: 30px 45px;
+
+    @media (--mobile) {
+      position: relative;
+      padding: 30px 20px;
+    }
   }
 
   &_close {
@@ -54,7 +81,22 @@
     }
 
     &:hover {
-      color: rgba(255, 255, 255, 0.8);
+      @media (--notTablet) {
+        color: rgba(255, 255, 255, 0.8);
+      }
     }
+  }
+
+  &_submit {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &_submit-text {
+    color: #fff;
+    font-size: 50px;
+    font-weight: 300;
+    margin-right: 15px;
   }
 }

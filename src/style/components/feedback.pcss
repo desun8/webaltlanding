@@ -6,6 +6,11 @@
   text-align: center;
   overflow: hidden;
 
+  @media (--tablet) {
+    padding-top: 50px;
+    padding-bottom: 80px;
+  }
+
   &::after {
     content: '';
     position: absolute;
@@ -47,7 +52,14 @@
   & p {
     max-width: 650px;
     margin-bottom: 64px;
-    font-weight: 300;
+    font-size: 18px;
+    line-height: 22px;
+
+    @media (--mobile) {
+      margin-bottom: 50px;
+      font-size: 14px;
+      line-height: 18px;
+    }
   }
 }
 
@@ -57,33 +69,82 @@
   justify-content: space-between;
   max-width: 540px;
 
+  @media (--mobile) {
+    width: 100%;
+  }
+
+  &_col-1,
+  &_col-2 {
+    position: relative;
+    margin-bottom: 30px;
+
+    @media (--mobile) {
+      margin-bottom: 20px;
+    }
+  }
+
+  &_col-2 {
+    flex: 1 0 5em;
+
+    @media (--mobile) {
+      flex: 1 0 100%;
+    }
+
+    &--phone {
+      margin-left: 30px;
+
+      @media (--mobile) {
+        margin-left: 0;
+      }
+    }
+  }
+
+  &_col-1 {
+    flex: 1 0 100%;
+  }
+
+  &_required {
+    position: relative;
+
+    &::before {
+      content: '*';
+      position: absolute;
+      top: 8px;
+      left: 8px;
+      color: #ff6060;
+    }
+  }
+
   &_name,
   &_phone,
   &_email,
   &_message {
-    margin-bottom: 30px;
+    @apply --trans;
+
+    width: 100%;
     padding: 15px 20px;
     background-color: #f6f6f6;
-    border: none;
+    border: 1px solid #f6f6f6;
     border-radius: 5px;
-  }
+    z-index: 5;
 
-  &_name,
-  &_phone {
-    flex: 1 0 5em;
-  }
+    &:hover {
+      @media (--notTablet) {
+        background-color: #ddd;
+      }
+    }
 
-  &_email,
-  &_message {
-    flex: 1 0 100%;
-  }
-
-  &_phone {
-    margin-left: 30px;
+    &.error {
+      border: 1px solid red;
+    }
   }
 
   &_message {
     resize: none;
+
+    @media (--mobile) {
+      height: 190px;
+    }
   }
 
   &_agreements {
@@ -92,5 +153,11 @@
     text-align: left;
     font-size: 18px;
     line-height: 22px;
+
+    @media (--mobile) {
+      margin-bottom: 25px;
+      font-size: 12px;
+      line-height: 16px;
+    }
   }
 }

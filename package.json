@@ -7,7 +7,8 @@
   "dependencies": {
     "global": "^4.3.2",
     "gulp-cli": "^2.0.1",
-    "gulp.spritesmith": "^6.9.0"
+    "gulp.spritesmith": "^6.9.0",
+    "imask": "^4.0.0"
   },
   "devDependencies": {
     "babel-preset-env": "^1.6.1",

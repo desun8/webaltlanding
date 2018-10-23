@@ -1,3 +1,27 @@
+@keyframes bg-fill-opacity {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes line-height {
+  0% {
+    height: 40px;
+  }
+
+  50% {
+    animation-timing-function: cubic-bezier(0.02, 0.01, 0.21, 1);
+  }
+
+  100% {
+    height: 0;
+  }
+}
+
 .hero {
   position: relative;
   padding-top: 210px;
@@ -5,6 +29,33 @@
   background: url(./img/hero-bg.jpg) no-repeat;
   background-size: contain;
   background-position: right;
+
+  @media (--tablet) {
+    padding-top: 60px;
+    padding-bottom: 105px;
+    background-size: cover;
+    background-position: 150px;
+  }
+
+  @media (--mobile) {
+    background-position: 0;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    width: 1px;
+    height: 40px;
+    background-color: #fff;
+    transform: translate3d(-50, 0, 0);
+    z-index: 5;
+    animation-name: line-height;
+    animation-duration: 2s;
+    animation-delay: 1s;
+    animation-iteration-count: infinite;
+  }
 
   &::after {
     content: '';
@@ -25,6 +76,8 @@
   }
 
   &_gradient {
+    @apply --trans-slow;
+
     position: absolute;
     top: 0;
     right: 0;
@@ -33,10 +86,29 @@
     background:
       linear-gradient(
         192.37deg,
-        rgba(222, 155, 85, 0.64) 6.21%,
+        rgba(222, 155, 85, 0.65) 6.21%,
         #de8655 79.68%
       );
     z-index: 1;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background:
+        linear-gradient(
+          192.37deg,
+          rgba(222, 155, 85, 1) 6.21%,
+          #de8655 79.68%
+        );
+      z-index: 2;
+      animation-name: bg-fill-opacity;
+      animation-duration: 4s;
+      animation-fill-mode: forwards;
+    }
   }
 
   &_title {
@@ -44,15 +116,31 @@
   }
 
   &_text {
-    max-width: 700px;
+    max-width: 800px;
     margin-bottom: 50px;
     font-size: 32px;
     line-height: 38px;
-    font-weight: 100;
-    font-style: italic;
+    font-weight: 300;
 
-    & b {
+    @media (--mobile) {
+      margin-bottom: 30px;
+      font-size: 14px;
+      line-height: 18px;
+    }
+
+    /* & b {
       font-weight: 700;
+    } */
+  }
+
+  & .btn {
+    width: 262px;
+
+    @media (--mobile) {
+      width: 135px;
+      padding: 8px 10px;
+      font-size: 14px;
+      line-height: 18px;
     }
   }
 }

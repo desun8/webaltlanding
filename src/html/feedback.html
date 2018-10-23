@@ -1,22 +1,30 @@
-<section class="feedback">
+<section id="feedback" class="feedback">
   <div class="feedback_bg"></div>
   <div class="wrap">
-    <h2 class="c-white">Все еще сомневаетесь на счет необходимости контекстной рекламы?</h2>
-    <p class="c-white">Оставьте заявку и мы <em><strong>бесплатно</strong></em> подготовим для Вас прогноз кол-ва <strong>посетителей</strong> сайта, бюджета, кол-ва <strong>продаж</strong>.</p>
+    <h3 class="c-white">Все еще сомневаетесь на счет необходимости контекстной рекламы?</h3>
+    <p class="c-white">Оставьте заявку и мы <strong>бесплатно</strong> подготовим для Вас прогноз кол-ва <strong>посетителей</strong> сайта, бюджета, кол-ва <strong>продаж</strong>.</p>
   
     <form id="mainForm" name="main-form" class="feedback-form" action="">
-      <input class="feedback-form_name" type="text" name="name" placeholder="Имя" required>
-      <input class="feedback-form_phone" type="tel" name="phone" placeholder="Номер телефона" required>
-      <input class="feedback-form_email" type="email" name="email" placeholder="Email">
-      <textarea class="feedback-form_message" name="message" cols="30" rows="14" placeholder="Адрес сайта и Описание кейса" required></textarea>
+      <label class="feedback-form_col-2  feedback-form_required" for="">
+        <input class="feedback-form_name" type="text" name="name" placeholder="Имя" required>
+      </label>
+      <label class="feedback-form_col-2  feedback-form_col-2--phone  feedback-form_required" for="">
+        <input class="feedback-form_phone" type="tel" name="phone" placeholder="Номер телефона" required>
+      </label>
+      <label class="feedback-form_col-1" for="">
+        <input class="feedback-form_email" type="email" name="email" placeholder="Email">
+      </label>
+      <label class="feedback-form_col-1  feedback-form_required" for="">
+        <textarea class="feedback-form_message" name="message" cols="30" rows="14" placeholder="Адрес сайта и Описание кейса" required></textarea>
+      </label>
   
       <label for="feedback-agreements" class="custom-checkbox  feedback-form_agreements">Нажимая на кнопку "Отправить", я даю согласие на обработку персональных данных.
-      <input id="feedback-agreements" class="custom-checkbox_input" type="checkbox" name="agreements" id="">
+      <input id="feedback-agreements" class="custom-checkbox_input" type="checkbox" name="agreements" id="" required>
         <span class="custom-checkbox_checkmark"></span>
       </label>
   
       <div class="notRobot"></div>
-      <button class="btn  btn--orange" type="submit">Отправить</button>
+      <button id="mainFormSubmit" class="btn  btn--orange" type="submit">Отправить</button>
     </form>
   </div>
 </section>

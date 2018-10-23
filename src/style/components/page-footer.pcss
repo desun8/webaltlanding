@@ -8,6 +8,19 @@
 
     justify-content: space-between;
     align-items: flex-start;
+
+    & > * {
+      @media (--tablet) {
+        flex: 1 0 50%;
+        justify-content: space-around;
+        text-align: center;
+      }
+
+      @media (--mobile) {
+        flex: 1 0 100%;
+        margin-bottom: 20px;
+      }
+    }
   }
 
   & .list-unstyled {
@@ -25,9 +38,17 @@
       @apply --trans;
 
       &:hover {
-        color: #fff;
+        @media (--notTablet) {
+          color: #fff;
+        }
       }
     }
+  }
+}
+
+.contact {
+  @media (--tablet) {
+    margin-bottom: 50px;
   }
 }
 
@@ -39,12 +60,14 @@
     @apply --trans;
 
     &:hover {
-      color: #fff;
+      @media (--notTablet) {
+        color: #fff;
 
-      & .find-us_text {
-        &::before,
-        &::after {
-          background-color: #fff;
+        & .find-us_text {
+          &::before,
+          &::after {
+            background-color: #fff;
+          }
         }
       }
     }

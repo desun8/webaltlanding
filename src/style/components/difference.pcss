@@ -1,6 +1,15 @@
 .difference {
-   padding-top: 150px;
-   padding-bottom: 180px;
+  padding-top: 150px;
+  padding-bottom: 180px;
+
+  @media (--tablet) {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  @media (--mobile) {
+    padding-bottom: 0;
+  }
 }
 
 .type-ads {
@@ -11,6 +20,10 @@
   align-items: center;
   padding-left: 20px;
   padding-right: 40px;
+
+  @media (--mobile) {
+    padding: 0;
+  }
 
   &_bg-icon {
     @apply --trans-slow;
@@ -42,6 +55,12 @@
   box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
   border-radius: 5px;
   z-index: 5;
+
+  @media (--mobile) {
+    flex: 1 0 100%;
+    margin-bottom: 68px;
+    padding: 15px 20px !important;
+  }
 
   &::after {
     content: '';
@@ -102,19 +121,20 @@
     height: 40px;
     background-image: url(./img/sprite.png);
     background-position: -629px -168px;
+
+    @media (--mobile) {
+      top: 10px;
+      left: 10px;
+      transform: scale3d(0.6, 0.6, 0.6);
+    }
   }
 
   &_img {
     @apply --flex-center;
   }
 
-  & h3,
-  & h4 {
-    font-style: italic;
-  }
-
   & p {
-    font-size: 18px;
-    line-height: 22px;
+    font-size: 16px;
+    line-height: 20px;
   }
 }
