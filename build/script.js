@@ -68,10 +68,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const pageMenu = document.querySelector('#pageMenu');
   const btnOpenPageMenu = document.querySelector('#showPageMenu');
+  const iconPageMenu = document.querySelector('.icon-hamburger');
 
-  btnOpenPageMenu.addEventListener('click', () => {
-    pageMenu.style.right = 0;
-    document.body.style.cssText = 'height: 100%; overflow: hidden;';
+  isScrollActive(false);
+
+  btnOpenPageMenu.addEventListener('click', (e) => {
+    iconPageMenu.classList.toggle('animate');
+
+    if (iconPageMenu.classList.contains('animate')) {
+      e.currentTarget.style.zIndex = 2000;
+      pageMenu.style.right = 0;
+      document.body.style.cssText = 'position: fixed; width: 100%; height: 100%; overflow: hidden;';
+    } else {
+      pageMenu.style.right = null;
+      document.body.style.cssText = null;
+      setTimeout(() => { btnOpenPageMenu.style.zIndex = null; }, 300);
+    }
   });
 
   const btnOpenModal = document.querySelector('#modalOpen');
