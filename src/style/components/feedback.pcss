@@ -71,6 +71,7 @@
 
   @media (--mobile) {
     width: 100%;
+    justify-content: center;
   }
 
   &_col-1,
@@ -158,6 +159,14 @@
       margin-bottom: 25px;
       font-size: 12px;
       line-height: 16px;
+    }
+  }
+
+  .feedback-form .notRobot {
+    margin-bottom: 20px;
+
+    @media (--mobile400) {
+      transform: scale3d(0.9211, 0.9211, 0.9211);
     }
   }
 }

@@ -1026,24 +1026,6 @@ button {
 @custom-media --tablet (width >= 48em) and (width < 80em);
 @custom-media --tabletMin (width >= 48em) and (width <= 50em); */
 /* Устройства с небольшими диогоналями - для резинновости */
-/* @custom-media --tablet800 (width > 50em) and (width < 80em);
-@custom-media --tablet950 (width > 59.375em) and (width < 80em);
-@custom-media --tablet1020 (width >= 63.75em) and (width < 80em);
-@custom-media --tablet1220 (width >= 76.25em) and (width < 80em); */
-/* Все что меньше планшетов 768px */
-/* @custom-media --mobile (width < 48em);
-@custom-media --mobileMin (width <= 20em); */
-/* Брейкпоинты для телефонов */
-/* @custom-media --mobile400 (width < 25em);
-@custom-media --mobile500 (width < 31.25em);
-@custom-media --mobile600 (width < 37.5em); */
-/* Дисплей больше 600 */
-/* @custom-media --desktop (width >= 37.5em); */
-/* Ретина дисплей */
-/* @custom-media --retina (resolution >= 192dpi); */
-/* @custom-media --sm (width >= 480px);
-@custom-media --sm520 (width >= 480px);
-@custom-media --md (width >= 768px); */
 /* Component */
 .page-header {
   background-color: #393939;
@@ -1530,6 +1512,8 @@ button {
 }
 .hero_title {
     max-width: 720px;
+    -webkit-animation-delay: 1s;
+            animation-delay: 1s;
 }
 .hero_text {
     max-width: 800px;
@@ -1537,6 +1521,8 @@ button {
     font-size: 32px;
     line-height: 38px;
     font-weight: 300;
+    -webkit-animation-delay: 2s;
+            animation-delay: 2s;
 }
 @media (max-width: 46.999em) {
   .hero_text {
@@ -1552,6 +1538,8 @@ button {
 }
 .hero .btn {
   width: 262px;
+  -webkit-animation-delay: 3s;
+          animation-delay: 3s;
 }
 @media (max-width: 46.999em) {
   .hero .btn {
@@ -2531,6 +2519,21 @@ button {
     padding: 0 20px;
   }
 }
+.slider-elem_img::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: -o-linear-gradient(81.68deg, #363636 -5.37%, rgba(54, 54, 54, 0) 78.57%);
+  background: linear-gradient(8.32deg, #363636 -5.37%, rgba(54, 54, 54, 0) 78.57%);
+}
+@media (max-width: 46.999em) {
+  .slider-elem_img::before {
+    content: none;
+  }
+}
 .slider-elem_img::after {
   content: '';
   position: absolute;
@@ -2639,6 +2642,9 @@ button {
 @media (max-width: 46.999em) {
   .feedback-form {
     width: 100%;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
 }
 .feedback-form_col-1, .feedback-form_col-2 {
@@ -2727,6 +2733,15 @@ button {
     line-height: 16px;
   }
 }
+.feedback-form .feedback-form .notRobot {
+    margin-bottom: 20px;
+}
+@media (max-width: 24.999em) {
+  .feedback-form .feedback-form .notRobot {
+      -webkit-transform: scale3d(0.9211, 0.9211, 0.9211);
+              transform: scale3d(0.9211, 0.9211, 0.9211);
+  }
+}
 .modal {
   /* @apply --trans-slow; */
 
@@ -2771,6 +2786,13 @@ button {
         -ms-flex-pack: justify;
             justify-content: space-between;
     overflow-y: scroll;
+  }
+}
+@media (max-width: 46.999em) {
+  .modal--result {
+      -webkit-box-align: start;
+          -ms-flex-align: start;
+              align-items: flex-start;
   }
 }
 /* &--form {
@@ -2846,9 +2868,26 @@ button {
         -ms-flex-align: center;
             align-items: center;
 }
+@media (max-width: 46.999em) {
+  .modal_submit {
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column;
+  }
+}
 .modal_submit-text {
     color: #fff;
     font-size: 50px;
     font-weight: 300;
     margin-right: 15px;
+}
+@media (max-width: 46.999em) {
+  .modal_submit-text {
+    font-size: 22px;
+    line-height: 28px;
+    margin-right: 0;
+    margin-bottom: 30px;
+    text-align: center;
+  }
 }

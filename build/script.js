@@ -70,8 +70,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const btnOpenPageMenu = document.querySelector('#showPageMenu');
   const iconPageMenu = document.querySelector('.icon-hamburger');
 
-  isScrollActive(false);
-
   btnOpenPageMenu.addEventListener('click', (e) => {
     iconPageMenu.classList.toggle('animate');
 
