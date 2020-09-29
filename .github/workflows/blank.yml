@@ -11,7 +11,4 @@ jobs:
       uses: actions/checkout@master
     - name: Deploy to GitHub Pages
       uses: Cecilapp/GitHub-Pages-deploy@master
-      env:
-        EMAIL: agropw@gmail.org
-        GH_TOKEN: ${{ 4f0f82674ac598468679bd9545ad23ff25dcf309 }}
-        BUILD_DIR: _site
+
