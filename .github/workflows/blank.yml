@@ -13,5 +13,5 @@ jobs:
       uses: Cecilapp/GitHub-Pages-deploy@master
       env:
         EMAIL: epchelinov@gmail.org
-        BUILD_DIR: _site
+        BUILD_DIR: build
 
