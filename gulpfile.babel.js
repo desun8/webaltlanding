@@ -135,4 +135,7 @@ export const sprite = gulp.series(spritepng, spritejpg);
 const def = gulp.parallel(watch, serve);
 // export const image = gulp.series(sprite, imageMin);
 
+const build = gulp.parallel(htmlInclude, makeStyle);
+
+export { build };
 export default def;
