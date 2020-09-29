@@ -11,4 +11,7 @@ jobs:
       uses: actions/checkout@master
     - name: Deploy to GitHub Pages
       uses: Cecilapp/GitHub-Pages-deploy@master
+      env:
+        EMAIL: epchelinov@gmail.org
+        BUILD_DIR: _site
 
